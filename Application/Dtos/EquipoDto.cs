@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace Application.Dtos
 {
-    public class EquipoDto
+    public class EquipoDto : BaseDto
     {
         [Required]
         public string Serial { get; set; } = null!;

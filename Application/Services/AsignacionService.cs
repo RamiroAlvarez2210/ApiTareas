@@ -12,7 +12,6 @@ namespace Application.Services
         private readonly IEquipoRepository<Equipo> _equipoRepository;
         private readonly IUsuarioRepository<Usuario> _usuarioRepository;
 
-
         public AsignacionService(IGenericRepository<Asignacion> asignacionRepository, IMapper<Asignacion, AsignacionDto> mapper,
             IEquipoRepository<Equipo> equipoRepository,
             IUsuarioRepository<Usuario> usuarioRepository)
@@ -22,19 +21,13 @@ namespace Application.Services
             _equipoRepository = equipoRepository;
             _usuarioRepository = usuarioRepository;
         }
-        public override bool AddAsync(AsignacionDto dto)
+        public override Guid AddAsync(AsignacionDto dto)
         {
-            int usuario = _usuarioRepository.GetByNombreUsuario(dto.NombreUsuario)
-                .BusquedaEntidad($"El usuario '{dto.NombreUsuario}' no existe.");
-
-            int equipo = _equipoRepository.GetBySerial(dto.NombreEquipo)
-                .BusquedaEntidad($"El equipo con serial '{dto.NombreEquipo}' no existe.");
-
             Asignacion nuevaAsignacion = new Asignacion
             {
                 Fecha = dto.Fecha,
-                IdUsuario = usuario,
-                IdEquipo = equipo
+                IdUsuario = _usuarioRepository.GetByGuid(dto.UsuarioId).Id,
+                IdEquipo = _equipoRepository.GetByGuid(dto.EquipoId).Id
             };
             return _asignacionRepository.Add(nuevaAsignacion);
         }
@@ -44,9 +37,42 @@ namespace Application.Services
             return asignaciones.Select(t => new AsignacionDto
             {
                 Fecha = t.Fecha,
-                NombreEquipo = _equipoRepository.GetById(t.IdEquipo).Marca,
-                NombreUsuario =_usuarioRepository.GetById(t.IdUsuario).Nombre
+                UsuarioId = _usuarioRepository.GetById(t.IdUsuario).PublicId,
+                EquipoId = _equipoRepository.GetById(t.IdEquipo).PublicId,
+                PublicId = t.PublicId
             });
+        }
+        public override AsignacionDto GetByGuid(Guid id)
+        {
+            Asignacion entity = _asignacionRepository.GetByGuid(id);
+            return new AsignacionDto
+            {
+                Fecha = entity.Fecha,
+                UsuarioId = _usuarioRepository.GetById(entity.IdUsuario).PublicId,
+                EquipoId = _equipoRepository.GetById(entity.IdEquipo).PublicId,
+                PublicId = entity.PublicId
+            };
+        }
+        public Guid AltaUsuarioEquipoAsync(AltaUsuarioEquipoDto dto)
+        {
+            Console.WriteLine("AaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Guid usuario = _usuarioRepository.Add(new Usuario
+            {
+                Nombre = dto.NombreUsuario,
+            });
+            Guid equipo = _equipoRepository.Add(new Equipo
+            {
+                Marca = dto.MarcaEquipo,
+                Modelo = dto.ModeloEquipo,
+                Serial = dto.SerialEquipo
+            });
+            Guid asignacion = _asignacionRepository.Add(new Asignacion
+            {
+                Fecha = dto.Fecha,
+                IdUsuario = _usuarioRepository.GetByGuid(usuario).Id,
+                IdEquipo = _equipoRepository.GetByGuid(equipo).Id
+            });
+            return asignacion;
         }
     }
 }

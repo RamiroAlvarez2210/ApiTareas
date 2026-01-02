@@ -26,11 +26,18 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(TDto dto)
         {
-            if ( _genericService.AddAsync(dto))
+            var result = await Task.Run(() => _genericService.AddAsync(dto));
+            if (result != Guid.Empty)
             {
-                return Ok("Entidad agregada correctamente");
+                return Ok($"Entidad agregada correctamente. PublicId: {result}");
             }
             return BadRequest("Error al agregar la entidad");
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByGuid(Guid id)
+        {
+            var datos = await Task.Run(() => _genericService.GetByGuid(id));
+            return Ok(datos);
         }
     }
 }

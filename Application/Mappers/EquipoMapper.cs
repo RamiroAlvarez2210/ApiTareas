@@ -18,6 +18,7 @@ namespace Application.Mappers
         {
             return new EquipoDto
             {
+                PublicId = entity.PublicId,
                 Serial = entity.Serial,
                 Marca = entity.Marca,
                 Modelo = entity.Modelo

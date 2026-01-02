@@ -22,8 +22,10 @@ builder.Services.AddDbContext<TareasDbContext>(
 builder.Services.AddScoped<IGenericService<UsuarioDto>, GenericService<Usuario, UsuarioDto>>();
 builder.Services.AddScoped<IGenericService<EquipoDto>, GenericService<Equipo, EquipoDto>>();
 
+builder.Services.AddScoped<AsignacionService>();
+builder.Services.AddScoped<IGenericService<AsignacionDto>>(provider => provider.GetRequiredService<AsignacionService>());
+
 builder.Services.AddScoped<IGenericService<TareaDto>, TareaService>();
-builder.Services.AddScoped<IGenericService<AsignacionDto>, AsignacionService>();
 
 
 // Mappers (Registrar cada implementación específica)

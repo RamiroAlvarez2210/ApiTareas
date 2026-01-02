@@ -17,6 +17,7 @@ namespace Application.Mappers
         {
             return new UsuarioDto
             {
+                PublicId = entity.PublicId,
                 Nombre = entity.Nombre,
                 Correo = entity.Correo
             };

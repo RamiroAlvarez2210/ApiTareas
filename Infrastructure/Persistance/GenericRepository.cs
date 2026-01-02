@@ -1,21 +1,24 @@
+using Domain.Entities;
 using Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Infraestructure.Persistance
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly TareasDbContext _context;
         public GenericRepository(TareasDbContext context)
         {
             _context = context;
         }
-        public bool Add(TEntity entity)
+        public Guid Add(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
-            return _context.SaveChanges() > 0;
+            _context.SaveChanges();
+            return entity.PublicId;
         }
         public IEnumerable<TEntity> GetAll()
         {
@@ -25,14 +28,21 @@ namespace Infraestructure.Persistance
         {
             return _context.Set<TEntity>().Find(id)!;
         }
+        public TEntity GetByGuid(Guid guid)
+        {
+           // return _context.Set<TEntity>().Find(guid)!;
+           return _context.Set<TEntity>()
+                    .AsNoTracking() // Úsalo si solo vas a leer datos, mejora el rendimiento
+                    .FirstOrDefault(e => e.PublicId == guid)!;
+        }
         public bool Update(TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);
             return _context.SaveChanges() > 0;
         }
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
-            var entity = GetById(id);
+            var entity = GetByGuid(id);
             if (entity == null) return false;
             _context.Set<TEntity>().Remove(entity);
             return _context.SaveChanges() > 0;

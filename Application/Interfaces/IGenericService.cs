@@ -3,11 +3,11 @@ namespace Application.Services
 {
     public interface IGenericService<TDto>
     {
-        public bool AddAsync(TDto dto);
-        public IEnumerable<TDto> GetAllAsync();
-        public TDto GetbyId(int id);
-        public bool UpdateAsync(TDto dto);
-        public bool DeleteAsync(int id);
+        Guid AddAsync(TDto dto);
+        IEnumerable<TDto> GetAllAsync();
+        TDto GetByGuid(Guid id);
+        bool UpdateAsync(TDto dto);
+        bool DeleteAsync(Guid id);
         
     }
 }

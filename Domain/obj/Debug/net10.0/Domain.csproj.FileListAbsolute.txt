@@ -9,3 +9,15 @@ E:\Proyectos - Estudios\APIs\Cs\GestorTareas\Domain\obj\Debug\net10.0\Domain.dll
 E:\Proyectos - Estudios\APIs\Cs\GestorTareas\Domain\obj\Debug\net10.0\refint\Domain.dll
 E:\Proyectos - Estudios\APIs\Cs\GestorTareas\Domain\obj\Debug\net10.0\Domain.pdb
 E:\Proyectos - Estudios\APIs\Cs\GestorTareas\Domain\obj\Debug\net10.0\ref\Domain.dll
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\bin\Debug\net10.0\Domain.deps.json
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\bin\Debug\net10.0\Domain.dll
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\bin\Debug\net10.0\Domain.pdb
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\Domain.AssemblyInfoInputs.cache
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\Domain.AssemblyInfo.cs
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\Domain.sourcelink.json
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\Domain.dll
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\refint\Domain.dll
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\Domain.pdb
+C:\Users\ralvarez_ext\OneDrive - FARMAPLUS\Escritorio\Codigo\C#\ApiTareas\Domain\obj\Debug\net10.0\ref\Domain.dll

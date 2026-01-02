@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TareasDbContext))]
-    [Migration("20260101191712_EquipoAsignacion")]
-    partial class EquipoAsignacion
+    [Migration("20260102185103_NullCorreo")]
+    partial class NullCorreo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,11 +35,17 @@ namespace Infrastructure.Migrations
                     b.Property<int>("IdUsuario")
                         .HasColumnType("INTEGER");
 
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdEquipo");
 
                     b.HasIndex("IdUsuario");
+
+                    b.HasIndex("PublicId")
+                        .IsUnique();
 
                     b.ToTable("Asignaciones");
                 });
@@ -58,11 +64,17 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Serial")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PublicId")
+                        .IsUnique();
 
                     b.ToTable("Equipos");
                 });
@@ -82,6 +94,9 @@ namespace Infrastructure.Migrations
                     b.Property<int>("Prioridad")
                         .HasColumnType("INTEGER");
 
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Titulo")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -89,6 +104,9 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("IdUsuario");
+
+                    b.HasIndex("PublicId")
+                        .IsUnique();
 
                     b.ToTable("Tareas");
                 });
@@ -100,21 +118,26 @@ namespace Infrastructure.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Correo")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PublicId")
+                        .IsUnique();
 
                     b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Domain.Entities.Asignacion", b =>
                 {
-                    b.HasOne("Domain.Entities.Usuario", "Equipo")
+                    b.HasOne("Domain.Entities.Equipo", "Equipo")
                         .WithMany()
                         .HasForeignKey("IdEquipo")
                         .OnDelete(DeleteBehavior.Cascade)

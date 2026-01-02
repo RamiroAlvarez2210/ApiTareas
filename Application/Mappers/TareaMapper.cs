@@ -16,7 +16,7 @@ namespace Application.Mappers
         {
             return new TareaDto
             {
-                
+                PublicId = entity.PublicId,
             };
         }   
     }

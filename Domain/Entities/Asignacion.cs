@@ -8,7 +8,7 @@ namespace Domain.Entities
         public Usuario Usuario { get; set; } = null!;
         public int IdEquipo { get; set; }
         [ForeignKey("IdEquipo")]
-        public Usuario Equipo { get; set; } = null!;
+        public Equipo Equipo { get; set; } = null!;
         public DateTime Fecha { get; set; }
     
     }

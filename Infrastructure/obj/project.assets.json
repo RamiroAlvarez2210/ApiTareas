@@ -3859,39 +3859,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ramir\\.nuget\\packages\\": {},
-    "C:\\Aplicaciones\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ralvarez_ext\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Proyectos - Estudios\\APIs\\Cs\\GestorTareas\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\ralvarez_ext\\OneDrive - FARMAPLUS\\Escritorio\\Codigo\\C#\\ApiTareas\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "E:\\Proyectos - Estudios\\APIs\\Cs\\GestorTareas\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\ramir\\.nuget\\packages\\",
-      "outputPath": "E:\\Proyectos - Estudios\\APIs\\Cs\\GestorTareas\\Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\ralvarez_ext\\OneDrive - FARMAPLUS\\Escritorio\\Codigo\\C#\\ApiTareas\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\ralvarez_ext\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ralvarez_ext\\OneDrive - FARMAPLUS\\Escritorio\\Codigo\\C#\\ApiTareas\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Aplicaciones\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ralvarez_ext\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "E:\\Proyectos - Estudios\\APIs\\Cs\\GestorTareas\\Domain\\Domain.csproj": {
-              "projectPath": "E:\\Proyectos - Estudios\\APIs\\Cs\\GestorTareas\\Domain\\Domain.csproj"
+            "C:\\Users\\ralvarez_ext\\OneDrive - FARMAPLUS\\Escritorio\\Codigo\\C#\\ApiTareas\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\ralvarez_ext\\OneDrive - FARMAPLUS\\Escritorio\\Codigo\\C#\\ApiTareas\\Domain\\Domain.csproj"
             }
           }
         }
@@ -3943,7 +3936,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

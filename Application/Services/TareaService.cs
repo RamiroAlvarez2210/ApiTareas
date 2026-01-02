@@ -18,7 +18,7 @@ namespace Application.Services
             _usuarioRepository = usuarioRepository;
         }
         
-        public override bool AddAsync(TareaDto dto)
+        public override Guid AddAsync(TareaDto dto)
         {
             //if (!existeUsuario)
             //    throw new KeyNotFoundException($"El usuario con ID {dto.IdUsuario} no existe.");

@@ -15,7 +15,7 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public virtual bool AddAsync(TDto dto)
+        public virtual Guid AddAsync(TDto dto)
         {
             return _genericRepository.Add(_mapper.ToEntity(dto));
         }
@@ -26,9 +26,9 @@ namespace Application.Services
         }
 
         // Ahora puedes recibir un int 'id' directamente
-        public TDto GetbyId(int id)
+        public virtual TDto GetByGuid(Guid id)
         {
-            var entity = _genericRepository.GetById(id);
+            var entity = _genericRepository.GetByGuid(id);
             return _mapper.ToDto(entity);
         }
 
@@ -39,7 +39,7 @@ namespace Application.Services
             return _genericRepository.Update(entity);
         }
 
-        public bool DeleteAsync(int id)
+        public bool DeleteAsync(Guid id)
         {
             return _genericRepository.Delete(id);
         }

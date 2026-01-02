@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Application.Dtos
 {
-    public class TareaDto
+    public class TareaDto : BaseDto
     {
         [Required]
         public string Titulo { get; set; } = null!;
