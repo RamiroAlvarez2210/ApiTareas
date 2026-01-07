@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run API via dotnet run",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "run-api",
+      "program": "dotnet",
+      "args": ["run", "--project", "${workspaceFolder}/API/API.csproj"],
+      "cwd": "${workspaceFolder}/API",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}
